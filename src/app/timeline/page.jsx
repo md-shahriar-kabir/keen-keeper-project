@@ -58,7 +58,7 @@ const TimelinePage = () => {
             onChange={(e) => setFilter(e.target.value)}
             className="w-full appearance-none px-4 py-2.5 border border-gray-200 rounded-xl bg-white shadow-sm text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer"
           >
-            <option value="all">All activities</option>
+            <option value="all">Filter Timeline</option>
             <option value="call">Calls</option>
             <option value="text">Texts</option>
             <option value="video">Videos</option>

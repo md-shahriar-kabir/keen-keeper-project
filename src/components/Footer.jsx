@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#2b5b49] text-white mt-20">
+    <footer className="bg-[#244D3F] text-white mt-20">
       <div className="max-w-7xl mx-auto px-6 py-16 text-center">
         
         {/* Title */}
@@ -17,7 +17,7 @@ const Footer = () => {
 
         {/* Social Links */}
         <div className="mb-10">
-          <p className="text-sm text-gray-200 mb-3">Social Links</p>
+          <p className="text-lg font-semibold text-gray-200 mb-3">Social Links</p>
 
           <div className="flex justify-center gap-4">
             

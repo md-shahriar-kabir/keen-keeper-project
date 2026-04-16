@@ -12,7 +12,7 @@ const FriendDetailsPage = async ({ params }) => {
         <div className="flex flex-col items-center justify-center min-h-screen text-center">
             <p className="text-red-500 text-sm font-medium tracking-widest uppercase mb-2">404</p>
             <h1 className="text-2xl font-bold mb-2" style={{ color: "#244D3F" }}>Friend not found</h1>
-            <p className="text-gray-400 text-sm mb-6">This person doesn't exist or was removed.</p>
+            <p className="text-gray-400 text-sm mb-6">This person doesnt exist or was removed.</p>
         </div>
     );
 
@@ -72,11 +72,11 @@ const FriendDetailsPage = async ({ params }) => {
                         {[
                             { value: friend.days_since_contact, label: "Days Since Contact" },
                             { value: friend.goal, label: "Goal (Days)" },
-                            { value: new Date(friend.next_due_date).toLocaleDateString("en-US", { month: "short", day: "numeric" }), label: "Next Due" }
+                            { value: new Date(friend.next_due_date).toLocaleDateString("en-US", { month: "short", day: "numeric", year:"numeric" }), label: "Next Due" }
                         ].map((item, i) => (
                             <div key={i} className="bg-white/80 backdrop-blur rounded-2xl p-5 text-center border border-gray-100 shadow-sm hover:shadow-md transition">
                                 <p className="text-2xl font-bold text-[#244D3F]">{item.value}</p>
-                                <p className="text-xs text-[#244D3F] mt-1">{item.label}</p>
+                                <p className="text-xs font-semibold text-gray-500 mt-1">{item.label}</p>
                             </div>
                         ))}
                     </div>
