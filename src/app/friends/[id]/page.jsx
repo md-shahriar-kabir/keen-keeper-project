@@ -2,8 +2,6 @@ import React from 'react';
 import friends from "../../../../public/friends.json";
 import CheckInButtons from "./CheckInButtons";
 import { Bell, Archive, Trash2, Pencil } from "lucide-react";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const statusStyle = (status) => {
     if (status === "overdue") return { background: "#fee2e2", color: "#991b1b" };
@@ -25,7 +23,6 @@ const FriendDetailsPage = async ({ params }) => {
 
     return (
         <div className="min-h-screen mt-20">
-            <ToastContainer />
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
 
                 {/* LEFT COLUMN */}
