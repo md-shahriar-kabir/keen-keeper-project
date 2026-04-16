@@ -21,7 +21,7 @@ const HomePage = () => {
                     </p>
 
                     <button className="bg-[#1e4d3a] font-semibold text-white px-5 py-2 rounded-md hover:opacity-90 transition text-sm sm:text-base cursor-pointer">
-                        + Add a 
+                        + Add a Friend
                     </button>
                 </div>
 
