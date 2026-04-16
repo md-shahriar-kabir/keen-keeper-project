@@ -7,6 +7,9 @@ Relationship management app to track and maintain personal connections.
 - Next.js
 - Tailwind CSS
 - Recharts
+- Daisy UI
+- Lucid Icon
+- 
 
 ## Features
 - Track friends

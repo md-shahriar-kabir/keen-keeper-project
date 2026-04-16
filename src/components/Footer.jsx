@@ -1,48 +1,76 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from "next/image";
+import Link from "next/link";
 
-const FooterSection = () => {
-    return (
-        <footer className="bg-[#244D3F] text-white py-12">
-            <div className="max-w-5xl mx-auto text-center px-4">
+const Footer = () => {
+  return (
+    <footer className="bg-[#2b5b49] text-white mt-20">
+      <div className="max-w-7xl mx-auto px-6 py-16 text-center">
+        
+        {/* Title */}
+        <h2 className="text-4xl font-bold mb-4">KeenKeeper</h2>
 
-                <h1 className="text-6xl font-bold mb-4">KeenKeeper</h1>
-                <p className="text-sm text-gray-400 mb-6">
-                    Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
-                </p>
-                <div className="mb-8">
-                    <p className="mb-3 text-xl">Social Links</p>
+        {/* Subtitle */}
+        <p className="text-gray-200 max-w-xl mx-auto text-sm mb-8">
+          Your personal shelf of meaningful connections. Browse, tend, and
+          nurture the relationships that matter most.
+        </p>
 
-                    <div className="flex justify-center gap-4">
-                        <a href="#" className="bg-white text-black p-1 rounded-full">
-                            <Image src="/assets/instagram.png" alt="Instagram" width={40} height={40} />
-                        </a>
+        {/* Social Links */}
+        <div className="mb-10">
+          <p className="text-sm text-gray-200 mb-3">Social Links</p>
 
-                        <a href="#" className="bg-white text-black p-1 rounded-full">
-                            <Image src="/assets/facebook.png" alt="Facebook" width={40} height={40} />
-                        </a>
+          <div className="flex justify-center gap-4">
+            
+            <Link href="#">
+              <div className="hover:scale-110 transition">
+                <Image
+                  src="/assets/facebook.png"
+                  alt="facebook"
+                  width={40}
+                  height={40}
+                />
+              </div>
+            </Link>
 
-                        <a href="#" className="bg-white text-black p-1 rounded-full">
-                            <Image src="/assets/twitter.png" alt="Twitter" width={40} height={40} />
-                        </a>
-                    </div>
-                </div>
+            <Link href="#">
+              <div className="hover:scale-110 transition">
+                <Image
+                  src="/assets/instagram.png"
+                  alt="instagram"
+                  width={40}
+                  height={40}
+                />
+              </div>
+            </Link>
 
-                <div className="border-t border-white/20 my-6"></div>
+            <Link href="#">
+              <div className="hover:scale-110 transition">
+                <Image
+                  src="/assets/twitter.png"
+                  alt="twitter"
+                  width={40}
+                  height={40}
+                />
+              </div>
+            </Link>
 
-                <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-                    <p>© 2026 KeenKeeper. All rights reserved.</p>
+          </div>
+        </div>
 
-                    <div className="flex gap-6 mt-3 md:mt-0">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Cookies</a>
-                    </div>
-                </div>
+        {/* Bottom */}
+        <div className="border-t border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-200">
+          <p>© 2026 KeenKeeper. All rights reserved.</p>
 
-            </div>
-        </footer>
-    );
+          <div className="flex gap-6 mt-3 md:mt-0">
+            <Link href="#">Privacy Policy</Link>
+            <Link href="#">Terms of Service</Link>
+            <Link href="#">Cookies</Link>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  );
 };
 
-export default FooterSection;
+export default Footer;
