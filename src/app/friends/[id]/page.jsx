@@ -54,13 +54,13 @@ const FriendDetailsPage = async ({ params }) => {
                     </div>
 
                     <div className="bg-white/80 backdrop-blur rounded-3xl border border-gray-100 overflow-hidden shadow-sm">
-                        <button className="flex items-center gap-3 w-full px-5 py-4 text-sm text-gray-700 hover:bg-gray-50 transition">
+                        <button className="flex justify-center items-center text-center gap-3 w-full px-5 py-4 text-sm text-gray-700 hover:bg-gray-100 transition">
                             <Bell size={18} /> Snooze 2 Weeks
                         </button>
-                        <button className="flex items-center gap-3 w-full px-5 py-4 text-sm text-gray-700 hover:bg-gray-50 border-t border-gray-100 transition">
+                        <button className="flex justify-center items-center gap-3 w-full px-5 py-4 text-sm text-gray-700 hover:bg-green-100 border-t border-gray-100 transition">
                             <Archive size={18} /> Archive
                         </button>
-                        <button className="flex items-center gap-3 w-full px-5 py-4 text-sm text-red-500 hover:bg-red-50 border-t border-gray-100 transition">
+                        <button className="flex justify-center items-center gap-3 w-full px-5 py-4 text-sm text-red-500 hover:bg-red-100 border-t border-gray-100 transition">
                             <Trash2 size={18} /> Delete
                         </button>
                     </div>

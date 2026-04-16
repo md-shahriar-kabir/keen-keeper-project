@@ -2,11 +2,11 @@
 import { useMemo } from "react";
 import { useTimeline } from "../context/TimelineContext";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recharts";
-import { Phone, MessageCircle, Video, Activity } from "lucide-react";
+import { Activity } from "lucide-react";
 
 const COLORS = {
-  call: "#4ade80",
-  text: "#34d399",
+  call: "#057032",
+  text: "#8727F5",
   video: "#6ee7b7",
 };
 
@@ -92,21 +92,21 @@ const StatesPage = () => {
     <div className="container mx-auto px-6 py-10 max-w-4xl">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Friendship Analytics</h1>
+        <h1 className="text-3xl font-bold text-gray-900">Friendship <span className="text-[#244D3F]">Analytics</span></h1>
         
       </div>
       
 
       {/* Chart */}
       <div className="bg-white border border-gray-100 rounded-3xl shadow-sm p-6">
-        <h2 className="font-semibold text-gray-800 mb-1">By Interaction Type</h2>
+        <h2 className="font-semibold text-xl text-[#244D3F] mb-1">By Interaction Type</h2>
         
 
         {total === 0 ? (
-          <div className="flex flex-col items-center justify-center h-64 text-gray-300">
+          <div className="flex flex-col items-center justify-center h-64 text-gray-400">
             <Activity size={36} className="mb-3" />
             <p className="text-sm">No check-ins recorded yet.</p>
-            <p className="text-xs mt-1">Head to a friend's page and log one!</p>
+            <p className="text-xs mt-1">Head to a friends page and log one!</p>
           </div>
         ) : (
           <ResponsiveContainer width="100%" height={300}>

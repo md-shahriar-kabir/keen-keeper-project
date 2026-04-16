@@ -12,7 +12,9 @@ const CheckButton = ({ friendName }) => {
 
     const handleCheckIn = (type, text, emoji, label) => {
         addTimeline(`${label} with ${friendName}`, type);
-        toast.success(`${label} with ${friendName} logged!`);
+        toast.info(`${label} with ${friendName} logged!`,{
+            position:"bottom-right"
+        });
     };
 
     return (
