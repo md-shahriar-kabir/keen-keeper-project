@@ -1,13 +1,8 @@
 import React from 'react';
 import friends from "../../../../public/friends.json";
-import CheckInButtons from "./CheckInButtons";
+import CheckButton from "./CheckButton";
 import { Bell, Archive, Trash2, Pencil } from "lucide-react";
-
-const statusStyle = (status) => {
-    if (status === "overdue") return { background: "#fee2e2", color: "#991b1b" };
-    if (status === "almost due") return { background: "#fef9c3", color: "#854d0e" };
-    return { background: "#dcfce7", color: "#166534" };
-};
+import Image from 'next/image';
 
 const FriendDetailsPage = async ({ params }) => {
     const { id } = await params;
@@ -28,18 +23,25 @@ const FriendDetailsPage = async ({ params }) => {
                 {/* LEFT COLUMN */}
                 <div className="flex flex-col gap-5">
                     <div className="bg-white/80 backdrop-blur rounded-3xl p-6 text-center shadow-sm border border-gray-100">
-                        <img
+                        <Image
+                            width={100}
+                            height={100}
                             src={friend.picture}
                             alt={friend.name}
                             className="w-24 h-24 rounded-full object-cover mx-auto mb-3 ring-4 ring-white shadow"
                         />
-                        <h2 className="text-xl font-semibold text-gray-800">{friend.name}</h2>
-                        <span
-                            className="inline-block mt-2 px-3 py-1 text-xs font-semibold rounded-full"
-                            style={statusStyle(friend.status)}
-                        >
-                            {friend.status}
-                        </span>
+                        <h2 className="text-xl font-semibold text-gray-800 mb-3">{friend.name}</h2>
+
+                        <p className={`badge p-3 rounded-full text-white font-semibold ${friend.status === "Overdue"
+                            ? "bg-[#EF4444]"
+                            : friend.status === "On-Track"
+                                ? "bg-[#244D3F]"
+                                : friend.status === "Almost Due"
+                                    ? "bg-[#EFAD44]"
+                                    : "bg-gray-400"
+                            }`}>{friend.status}</p>
+
+
                         <div className="flex flex-wrap gap-2 justify-center mt-3">
                             {friend.tags.map((tag) => (
                                 <span key={tag} className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full font-medium">
@@ -47,8 +49,8 @@ const FriendDetailsPage = async ({ params }) => {
                                 </span>
                             ))}
                         </div>
-                        <p className="text-gray-500 text-sm mt-4 italic">"{friend.bio}"</p>
-                        <p className="text-gray-400 text-xs mt-1">Preferred: email</p>
+                        <p className="text-gray-500 text-sm mt-4 italic">{friend.bio}</p>
+                        <p className="text-gray-400 text-xs mt-1">{friend.email}</p>
                     </div>
 
                     <div className="bg-white/80 backdrop-blur rounded-3xl border border-gray-100 overflow-hidden shadow-sm">
@@ -73,15 +75,15 @@ const FriendDetailsPage = async ({ params }) => {
                             { value: new Date(friend.next_due_date).toLocaleDateString("en-US", { month: "short", day: "numeric" }), label: "Next Due" }
                         ].map((item, i) => (
                             <div key={i} className="bg-white/80 backdrop-blur rounded-2xl p-5 text-center border border-gray-100 shadow-sm hover:shadow-md transition">
-                                <p className="text-2xl font-bold text-gray-800">{item.value}</p>
-                                <p className="text-xs text-gray-400 mt-1">{item.label}</p>
+                                <p className="text-2xl font-bold text-[#244D3F]">{item.value}</p>
+                                <p className="text-xs text-[#244D3F] mt-1">{item.label}</p>
                             </div>
                         ))}
                     </div>
 
                     <div className="bg-white/80 backdrop-blur rounded-3xl p-6 border border-gray-100 shadow-sm">
                         <div className="flex justify-between items-center mb-2">
-                            <h3 className="font-semibold text-gray-800">Relationship Goal</h3>
+                            <h3 className="text-xl font-semibold text-[#244D3F]">Relationship Goal</h3>
                             <button className="flex items-center gap-1 text-xs border border-gray-200 px-3 py-1 rounded-lg hover:bg-gray-50">
                                 <Pencil size={14} /> Edit
                             </button>
@@ -92,8 +94,8 @@ const FriendDetailsPage = async ({ params }) => {
                     </div>
 
                     <div className="bg-white/80 backdrop-blur rounded-3xl p-6 border border-gray-100 shadow-sm">
-                        <h3 className="font-semibold text-gray-800 mb-4">Quick Check-In</h3>
-                        <CheckInButtons friendName={friend.name} />
+                        <h3 className="text-xl font-semibold text-[#244D3F] mb-4">Quick Check-In</h3>
+                        <CheckButton friendName={friend.name} />
                     </div>
                 </div>
             </div>

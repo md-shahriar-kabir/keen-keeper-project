@@ -2,7 +2,7 @@ import friends from "../../../public/friends.json";
 import Link from "next/link";
 import Image from "next/image";
 
-const getStatusStyle = (status = "") => {
+const tagStatusStyle = (status = "") => {
     const s = status.toLowerCase().trim();
     if (s === "overdue") return { badge: "bg-red-100 text-red-700", dot: "bg-red-400" };
     if (s === "almost due") return { badge: "bg-amber-100 text-amber-800", dot: "bg-amber-400" };
@@ -13,7 +13,7 @@ const Friends = () => {
     return (
         <>
             {friends.map((friend) => {
-                const { badge, dot } = getStatusStyle(friend.status);
+                const { badge, dot } = tagStatusStyle(friend.status);
                 return (
                     <Link
                         href={`/friends/${friend.id}`}

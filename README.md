@@ -9,7 +9,7 @@ Relationship management app to track and maintain personal connections.
 - Recharts
 - Daisy UI
 - Lucid Icon
-- 
+- React Icon
 
 ## Features
 - Track friends
