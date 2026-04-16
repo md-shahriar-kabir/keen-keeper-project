@@ -4,6 +4,7 @@ import { Circles } from "react-spinners";
 const HomePage = () => {
 
     const loading = false;
+    console.log(loading)
 
     return (
         <div className="bg-gray-50 min-h-screen px-4 sm:px-6 lg:px-10 py-8 sm:py-10">
